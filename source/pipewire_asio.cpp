@@ -341,7 +341,8 @@ static auto convert(struct spa_io_position* position) -> ASIOTime
 //-----------------------------------------------------------------------------
 static auto toggle(long& double_buf_index) -> long
 {
-    double_buf_index = double_buf_index == 0 ? 1 : 0;
+    // Toggle between 0 and 1
+    double_buf_index = double_buf_index ^ 1;
     return double_buf_index;
 }
 
