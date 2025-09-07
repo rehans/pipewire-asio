@@ -1,4 +1,4 @@
-# PipeWire 2 ASIO Wrapper
+# PipeWire 2 ASIO
 
 ## Introduction
 
@@ -13,12 +13,14 @@ To clone and create the project, open a command prompt and proceed as follows:
 ### Linux
 
 ```cpp 
-git clone https://.../pipewire2asio.git
+git clone https://github.com/rehans/pipewire-asio.git
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Debug ../pipewire2asio
+cmake -DCMAKE_BUILD_TYPE=Debug ../pipewire-asio
 cmake --build .
 ```
+
+Run the `pipewire_asio_tester` afterwards to debug the driver.
 
 ## Get Help
 
