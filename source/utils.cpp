@@ -79,13 +79,12 @@ auto to_map(const struct spa_dict* props) -> p2a::Properties
 
 auto find_object_name(const struct spa_dict* props) -> const char*
 {
-    static const char* const name_keys[] = {
-        PW_KEY_NODE_NAME,
-        PW_KEY_PORT_NAME,
-        PW_KEY_CLIENT_NAME,
-        PW_KEY_DEVICE_NAME,
-        PW_KEY_METADATA_NAME,
-    };
+    static const char* const name_keys[] = {PW_KEY_NODE_NAME,
+                                            PW_KEY_PORT_NAME,
+                                            PW_KEY_CLIENT_NAME,
+                                            PW_KEY_DEVICE_NAME,
+                                            PW_KEY_METADATA_NAME,
+                                            PW_KEY_APP_NAME};
 
     SPA_FOR_EACH_ELEMENT_VAR(name_keys, key)
     {
