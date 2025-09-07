@@ -16,6 +16,7 @@ using Handle     = void*;
 using DataHandle = Handle;
 using StringType = std::string;
 using Properties = std::unordered_map<StringType, StringType>;
+using SampleType = float;
 
 struct Object
 {
@@ -64,9 +65,6 @@ struct Settings
     int64_t force_quantum = 0;
     SampleRates allowed_rates;
 };
-
-using SampleType = float;
-using StringType = std::string;
 
 struct ChannelInfo
 {
