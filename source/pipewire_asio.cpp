@@ -255,15 +255,13 @@ static auto registry_event_global(void* user_data,
     if (props == NULL)
         return;
 
-    const auto name = find_object_name(props);
-    if (name == NULL)
-        return;
-
+    const auto val        = find_object_name(props);
+    const StringType name = val ? val : "";
     fprintf(stdout,
             "global object: id:%u type:'%s' name:'%s' version: %u\n",
             id,
             type,
-            name,
+            name.c_str(),
             version);
 
     const Object obj{id, to_map(props), type, version, permissions, name};
@@ -307,12 +305,15 @@ static auto registry_event_remove(void* user_data, uint32_t id) -> void
     if (iter == data->pipewire.objects.end())
         return;
 
+    const auto object = *iter;
     data->pipewire.objects.erase(iter);
 
     fprintf(stdout,
-            "remove object: id:%u name:'%s'\n",
-            iter->id,
-            iter->name.c_str());
+            "remove object: id:%u type:'%s' name:'%s' version: %u\n",
+            object.id,
+            object.type.c_str(),
+            object.name.c_str(),
+            object.version);
 }
 
 //-----------------------------------------------------------------------------
