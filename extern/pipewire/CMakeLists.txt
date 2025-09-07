@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20.0)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(PIPEWIRE REQUIRED libpipewire-0.3)
+
+message(STATUS "PIPEWIRE_INCLUDE_DIRS: ${PIPEWIRE_INCLUDE_DIRS}")
+message(STATUS "PIPEWIRE_LIBRARIES: ${PIPEWIRE_LIBRARIES}")
+message(STATUS "PIPEWIRE_CFLAGS_OTHER: ${PIPEWIRE_CFLAGS_OTHER}")
